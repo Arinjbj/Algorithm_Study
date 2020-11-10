@@ -35,15 +35,15 @@ void quicksort(vector<int>& v, int left, int right)
 int partition(vector<int>& v, int left, int right)
 {
 	int pivalue = v[right];
-	int i = left - 1;
+	int i = left;
 	for (int j = left; j <= right - 1; ++j)
 	{
 		if (v[j] <= pivalue)
 		{
-			++i;
 			swap(v[i], v[j]);
+			++i;
 		}
 	}
-	swap(v[i + 1], v[right]);
-	return i + 1;
+	swap(v[i], v[right]);
+	return i;
 }
